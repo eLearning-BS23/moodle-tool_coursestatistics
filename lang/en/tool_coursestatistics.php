@@ -24,3 +24,7 @@
 
 $string['pluginname'] = 'Course Statistics';
 $string['coursestatistics'] = 'Course Statistics';
+$string['coursestatistics_passed'] = 'Passed';
+$string['coursestatistics_failed'] = 'Failed';
+$string['coursestatistics_filter'] = 'Filter';
+$string['coursestatistics_course'] = 'Select Course';

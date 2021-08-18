@@ -1,4 +1,5 @@
-require(['core/first', 'jquery', 'jqueryui', 'core/ajax'], function(core, $, bootstrap, ajax) {
+require(['core/first', 'jquery', 'jqueryui', 'core/ajax','core/str'],
+    function(core, $, bootstrap, ajax, str) {
 
     //chart config
     var xValues = [];
@@ -33,12 +34,16 @@ require(['core/first', 'jquery', 'jqueryui', 'core/ajax'], function(core, $, boo
                     });
                 });
 
+                var ts = str.get_strings([
+                    {key: 'coursestatistics', component: 'tool_coursestatistics'},
+                ]);
+
                 new Chart("myChart", {
                     type: "bar",
                     data: {
                         labels: xValues,
                         datasets: [{
-                            label: 'Passed',
+                            label: M.util.get_string('coursestatistics_passed', 'tool_coursestatistics'),
                             backgroundColor: barColors,
                             borderColor: 'rgba(0,0,0,0.5)',
                             borderWidth: 1,
@@ -49,7 +54,7 @@ require(['core/first', 'jquery', 'jqueryui', 'core/ajax'], function(core, $, boo
                         legend: {display: false},
                         title: {
                             display: true,
-                            text: "Passed"
+                            text: M.util.get_string('coursestatistics_passed', 'tool_coursestatistics')
                         },
                         scales: {
                             yAxes: [{
@@ -77,7 +82,7 @@ require(['core/first', 'jquery', 'jqueryui', 'core/ajax'], function(core, $, boo
                     data: {
                         labels: xValues,
                         datasets: [{
-                            label: 'Failed',
+                            label: M.util.get_string('coursestatistics_failed', 'tool_coursestatistics'),
                             backgroundColor: barColors,
                             borderColor: 'rgba(0,0,0,0.5)',
                             borderWidth: 1,
@@ -88,7 +93,7 @@ require(['core/first', 'jquery', 'jqueryui', 'core/ajax'], function(core, $, boo
                         legend: {display: false},
                         title: {
                             display: true,
-                            text: "Failed"
+                            text: M.util.get_string('coursestatistics_failed', 'tool_coursestatistics')
                         },
                         scales: {
                             yAxes: [{
@@ -127,11 +132,11 @@ require(['core/first', 'jquery', 'jqueryui', 'core/ajax'], function(core, $, boo
 
                 const data = {
                     labels: [
-                        'Passed',
-                        'Failed'
+                        M.util.get_string('coursestatistics_passed', 'tool_coursestatistics'),
+                        M.util.get_string('coursestatistics_failed', 'tool_coursestatistics')
                     ],
                     datasets: [{
-                        label: 'Course Statistics',
+                        label: M.util.get_string('coursestatistics', 'tool_coursestatistics'),
                         data: [chartdata.passed, chartdata.failed],
                         backgroundColor: [
                             'rgb(46, 204, 113)',
