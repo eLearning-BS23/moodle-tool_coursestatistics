@@ -3,8 +3,8 @@
 Course Statistics is a admin tool plugin developed for viewing different charts
 for passed/failed statistics by course for currently enrolled students
 
-![Screenshot 1](/screenshot/1.png)
-![Screenshot 2](/screenshot/2.png)
+![Screenshot 1](/screenshots/1.png)
+![Screenshot 2](/screenshots/2.png)
 
 # Installing directly from the Moodle plugins directory
 - Login as an admin and go to Site administration > Plugins > Install plugins. (If you can't find this - location, then plugin installation is prevented on your site.)
