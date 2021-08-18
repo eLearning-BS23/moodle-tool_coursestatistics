@@ -32,7 +32,7 @@ class filterform extends moodleform
         global $CFG,$DB;
 
         $mform = $this->_form; // Don't forget the underscore!
-        $mform->addElement('html', '<h4>Filter</h4><br><br>');
+        $mform->addElement('html', '<h4>'.get_string('coursestatistics_filter', 'tool_coursestatistics').'</h4><br><br>');
 
         $courses = $DB->get_records('course',null);
         $options= [];
@@ -41,18 +41,9 @@ class filterform extends moodleform
             $options[$course->id] = $course->fullname;
         }
 
-        $mform->addElement('select', 'courses', 'Courses', $options); // Add elements to your form
+        $mform->addElement('select', 'courses', get_string('coursestatistics_course', 'tool_coursestatistics'), $options); // Add elements to your form
         $mform->setType('courses', PARAM_INT);                   //Set type of element
         $mform->setDefault('courses', -1);        //Default value
-
-//        $options= [];
-//        $mform->addElement('select', 'teachers', 'Teachers', $options); // Add elements to your form
-//        $mform->setType('teachers', PARAM_INT);                   //Set type of element
-//        $mform->setDefault('courses', -1);        //Default value
-//
-//        $mform->addElement('hidden', 'teacherid'); // Add elements to your form
-//        $mform->setType('teacherid', PARAM_INT);                   //Set type of element
-//        $mform->setDefault('teacherid', -1);        //Default value
 
         $buttonarray=array();
         //$buttonarray[] = $mform->createElement('submit', 'Submit', 'Filter');

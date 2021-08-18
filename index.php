@@ -13,7 +13,9 @@ $PAGE->requires->css('/admin/tool/coursestatistics/assets/css/custom.css');
 echo $OUTPUT->header();
 echo $OUTPUT->heading(get_string('coursestatistics', 'tool_coursestatistics'));
 //echo html_writer::link('/', 'Hello', array('id'=>'link'));
-
+$stringman = get_string_manager();
+$strings = $stringman->load_component_strings('tool_coursestatistics', 'en');
+$PAGE->requires->strings_for_js(array_keys($strings), 'tool_coursestatistics');
 echo html_writer::start_tag('pre');
 //$grading_info = new GetGrades();
 //print_r($grading_info->getresults());
